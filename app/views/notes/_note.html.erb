@@ -1,0 +1,12 @@
+            <li>
+                <div>
+                     <blockquote>
+                         <p><%= simple_format note.body %></p>
+                         <br>
+                         <small class='big'><em ><%= note.author %></em></small>
+                         <p class = 'text-right'><small><%=note.created_at.to_date.to_s(:long)%></small></p>
+                     </blockquote>
+                 </div>
+            </li>
+            <hr>
+

@@ -1,0 +1,6 @@
+$('h2:contains("No notes added Yet!")').remove();
+//var n = $("<%= j(render(@note)) %>");
+$('#notes').prepend("<div class = 'new' style = 'display: none;'><%= j(render(@note)) %></div>"); //TODO: a _note partial  
+$('#new_note')[0].reset();
+alert('Thanks for your note..It has been added below');
+$('.new').slideDown('slow');

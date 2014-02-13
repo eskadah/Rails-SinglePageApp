@@ -1,0 +1,49 @@
+
+<div class="page-header">
+    <h1>Wali's Message Board </h1>
+    <h1><small>A practice App in Ruby</small></h1>
+</div>
+
+<div class = container>
+
+
+    <div class =row >
+
+
+      <div class = 'span6 offset3'>
+
+<%= form_for(@note, remote: true,:html=>{:class => 'input-block-level'}) do |f| %>
+<%=label :body, "Your Note:",:class => 'lead' %>
+<%= f.text_area :body,:class => 'input-block-level', :autofocus=> true %> 
+<br>
+<p>  
+<%=label :author, "Your Name:",:class => 'lead' %>
+<%= f.text_field :author,:class => 'input-block-level' %> 
+</p>
+<p>
+<%= f.submit "Leave a message for Wali",:class => 'btn btn-large btn-block' %>
+</p>
+<% end %>
+</div>
+</div>
+</div>
+<br>
+<hr>
+ <div class = 'container'>
+
+
+      <div class =row >
+
+
+          <div class = 'span8 offset2 well'>
+<ul class = 'unstyled' id = 'notes'>
+<% if Note.all.any? %>	
+<%= render Note.all %>
+<% else %>
+<h2> No notes added Yet! </h2>
+<% end %>
+</ul>
+
+</div>
+</div>
+</div>
